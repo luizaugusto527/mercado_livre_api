@@ -50,12 +50,12 @@ email: admin@admin
 senha:123456789
 ### Integração com o Mercado Livre
 Para realizar a integração com o mercado livre foram feitas as etapas a seguir
-1. Criar a conta no mercado livre
-2. Apos a conta ser criada acesse o link para criar uma nova API clicando [aqui](https://developers.mercadolivre.com.br/devcenter)
+- Criar a conta no mercado livre
+- Apos a conta ser criada acesse o link para criar uma nova API clicando [aqui](https://developers.mercadolivre.com.br/devcenter)
 Todas as infromações sobre como criar a conta pode ser vista clicando [aqui](https://developers.mercadolivre.com.br/pt_br/crie-uma-aplicacao-no-mercado-livre)
 
- Após criar a aplicação guarde as informações do ID do aplicativo, cheve secreta e URIs de redirect
-4. Com as informações em mãos, acesse o link
+- Após criar a aplicação guarde as informações do ID do aplicativo, cheve secreta e URIs de redirect
+- Com as informações em mãos, acesse o link
 ~~~php
    https://auth.mercadolivre.com.br/authorization?response_type=code&client_id=SEU_API_ID&redirect_uri=SUA_URI_REDIRECT
 ~~~
@@ -66,7 +66,7 @@ Ao clicar em autorizar você será redirecionado para a página da url de redire
 https://localhost.com/redirect?code=TG-61828b7fffcc9a001b4bc890-314029626
 Neste exemplo o code é TG-61828b7fffcc9a001b4bc890-314029626
 
-5. Trocando o Code por um Token
+-Trocando o Code por um Token
    Com o code em mãos basta fazer uma requisição ao mercado livre para pegar o token e o refresh token
 
    Exemplo que requisição
@@ -117,6 +117,6 @@ VALUES (
 ~~~
 **OBS:** O token do mercado livre expira a cada 6 horas, portando a aplicação já está propramada para buscar um novo token a cada 6 horas portando o passo 6 só precisa ser feito uma vez e o sistema buscará automaticamente o token
 
-6. Vá no arquivo .env e coloque o ID da aplicação na variável MERCADO_LIVRE_CLIENT_ID a chave secreta na variável MERCADO_LIVRE_CLIENT_SECRET e a url de redirecionamento na variável MERCADO_LIVRE_REDIRECT_URI 
+- Vá no arquivo .env e coloque o ID da aplicação na variável MERCADO_LIVRE_CLIENT_ID a chave secreta na variável MERCADO_LIVRE_CLIENT_SECRET e a url de redirecionamento na variável MERCADO_LIVRE_REDIRECT_URI 
 
 
