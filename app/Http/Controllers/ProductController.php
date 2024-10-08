@@ -12,31 +12,35 @@ class ProductController extends Controller
     public function create()
     {
 
+
         return view('products.create');
     }
 
     public function store(Request $request)
     {
+
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'price' => 'required|numeric|min:8',
-            'quantity' => 'required|integer|min:0',
+            'quantity' => 'required|integer|in:1',
             'category_id' => 'required|string',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
-            'name.required' => 'O campo Nome é obrigatório.',
-            'description.required' => 'O campo Descrição é obrigatório.',
-            'price.required' => 'O campo Preço é obrigatório.',
-            'price.numeric' => 'O campo Preço deve ser um número válido.',
-            'price.min' => 'O campo Preço deve ser um número maior que 8.',
-            'quantity.required' => 'O campo Quantidade é obrigatório.',
-            'quantity.integer' => 'O campo Quantidade deve ser um número inteiro.',
-            'quantity.min' => 'O campo Quantidade deve ser um número positivo.',
+            'name.required' => 'O campo Nome Ã© obrigatÃ³rio.',
+            'description.required' => 'O campo DescriÃ§Ã£o Ã© obrigatÃ³rio.',
+            'price.required' => 'O campo PreÃ§o Ã© obrigatÃ³rio.',
+            'price.numeric' => 'O campo PreÃ§o deve ser um nÃºmero vÃ¡lido.',
+            'price.min' => 'O campo PreÃ§o deve ser um nÃºmero maior que 8.',
+            'quantity.required' => 'O campo Quantidade Ã© obrigatÃ³rio.',
+            'quantity.integer' => 'O campo Quantidade deve ser um nÃºmero inteiro.',
+            'quantity.in' => 'O campo Quantidade deve ser um 1.',
+            'category_id' => 'A categoria selecionada é inválida.',
+            'quantity.min' => 'O campo Quantidade deve ser um nÃºmero positivo.',
             'category_id.required' => 'Selecione uma categoria.',
             'image.image' => 'O arquivo deve ser uma imagem.',
             'image.mimes' => 'A imagem deve estar em um dos formatos: jpeg, png, jpg ou gif.',
-            'image.max' => 'A imagem não pode ser maior que 2MB.',
+            'image.max' => 'A imagem nÃ£o pode ser maior que 2MB.',
         ]);
 
         $imagePath = null;
@@ -86,7 +90,6 @@ class ProductController extends Controller
         }
         else {
 
-            dd($response->body());
 
             return redirect()->back()->with('error', 'Erro ao cadastrar produto: ' . ($response->json()['message'] ?? $response->body()));
         }
@@ -98,7 +101,9 @@ class ProductController extends Controller
     private function getAccessToken()
     {
 
+
         $apiToken = DB::table('access_tokens')->first();
+
 
 
         if ($apiToken && now()->isBefore($apiToken->expires_at)) {
