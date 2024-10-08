@@ -7,6 +7,22 @@
     <title>Cadastro de Produto</title>
 </head>
 <body>
+    <!-- Header -->
+    <header class="bg-light py-3 mb-5">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h5>Desafio Destak</h5>
+
+            @auth
+            <!-- Formulário para Logout -->
+            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
+            @endauth
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
     <div class="container mt-5">
         <h1 class="mb-4">Cadastro de Produto</h1>
 
