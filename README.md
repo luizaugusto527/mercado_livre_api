@@ -7,9 +7,11 @@ Desafio Destak
 
 ### Instalação do projeto
 
-#### Para realizar o projeto estou utilizando o Laragon, que pode ser baixado clicando (aqui)[https://laragon.org/download/)
+#### Para realizar o projeto estou utilizando o Laragon, que pode ser baixado clicando [clique aqui](https://laragon.org/download/)
+
 Ao fazer a instalação do Laragon, basta clicar no terminal
-![image](https://github.com/user-attachments/assets/22832b65-da09-4ab5-bb09-02a88169cf11]
+![image](https://github.com/user-attachments/assets/e0274eb9-e40e-42ff-b71e-1e665cbc20ed)
+
 
 Ao abrir o terminal digite os comandos:
 ~~~php
@@ -31,8 +33,21 @@ php artisan migrate
 
 ~~~
 
-Todos os dados necessários estão em um arquivo sql que pode ser baixado clicando (aqui)[https://drive.google.com/file/d/1QNzg_dRMgl0tn5Ac33kCxdt-6oTwNl9N/view?usp=sharing]
+Todos os dados necessários estão em um arquivo sql que pode ser baixado clicando [aqui](https://drive.google.com/file/d/1QNzg_dRMgl0tn5Ac33kCxdt-6oTwNl9N/view?usp=sharing)
+Após baixar os dados, basta clicar no banco de dados
+![image](https://github.com/user-attachments/assets/7cc9d7a5-fc5a-4be4-bca5-3c47c5b886b0)
 
+E escolher o banco de dados "test_destak"
+![image](https://github.com/user-attachments/assets/b72b5b54-b147-4dc0-8ba4-7173b4d5131d)
+
+Agora basta ir no terminal do Laragon e digitar o comando
+~~~php
+php artisan serve
+
+~~~
+A aplicação será iniciada no endereço http://127.0.0.1:8000 e as credenciais de acesso são
+email: admin@admin
+senha:123456789
 ### Conseguir as credencias de acesso para a API do mercado livre
 
 #### \-------
